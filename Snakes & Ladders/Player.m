@@ -36,7 +36,7 @@
 
 -(void)roll {
     NSInteger roll = arc4random_uniform(6) + 1;
-    NSLog(@"You rolled a %ld", roll);
+    NSLog(@"%@ rolled a %ld", _name, roll);
     
     _currentSquare += roll;
     NSNumber *castRoll = [NSNumber numberWithInteger:_currentSquare];
@@ -45,13 +45,13 @@
     if (newSquare != NULL) {
         _currentSquare = [newSquare integerValue];
         if (newSquare > castRoll) {
-            _output = [NSString stringWithFormat:@"Stairway to heaven! You jumped from %@ to %ld", castRoll, _currentSquare];
+            _output = [NSString stringWithFormat:@"Stairway to heaven! %@ jumped from %@ to %ld", _name, castRoll, _currentSquare];
         } else {
-            _output = [NSString stringWithFormat:@"You got bit by a snake! You slid down to %ld from %@", _currentSquare, castRoll];
+            _output = [NSString stringWithFormat:@"You got bit by a snake! %@ slid down to %ld from %@", _name, _currentSquare, castRoll];
         }
     }
     else {
-        _output = [NSString stringWithFormat:@"You landed on %ld", _currentSquare];
+        _output = [NSString stringWithFormat:@"%@ landed on %ld", _name, _currentSquare];
     }
     if (_currentSquare >= 100) {
         _gameOver = 0;

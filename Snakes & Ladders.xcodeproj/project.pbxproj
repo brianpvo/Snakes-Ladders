@@ -10,6 +10,7 @@
 		7A105A0E2082BC90001EB299 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A105A0D2082BC90001EB299 /* main.m */; };
 		7A105A162082BD4F001EB299 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A105A152082BD4F001EB299 /* InputHandler.m */; };
 		7A105A192082BE1C001EB299 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A105A182082BE1C001EB299 /* Player.m */; };
+		7A105A1C2083F3FA001EB299 /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A105A1B2083F3FA001EB299 /* PlayerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		7A105A152082BD4F001EB299 /* InputHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 		7A105A172082BE1C001EB299 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		7A105A182082BE1C001EB299 /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		7A105A1A2083F3FA001EB299 /* PlayerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerManager.h; sourceTree = "<group>"; };
+		7A105A1B2083F3FA001EB299 /* PlayerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				7A105A152082BD4F001EB299 /* InputHandler.m */,
 				7A105A172082BE1C001EB299 /* Player.h */,
 				7A105A182082BE1C001EB299 /* Player.m */,
+				7A105A1A2083F3FA001EB299 /* PlayerManager.h */,
+				7A105A1B2083F3FA001EB299 /* PlayerManager.m */,
 			);
 			path = "Snakes & Ladders";
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			files = (
 				7A105A0E2082BC90001EB299 /* main.m in Sources */,
 				7A105A192082BE1C001EB299 /* Player.m in Sources */,
+				7A105A1C2083F3FA001EB299 /* PlayerManager.m in Sources */,
 				7A105A162082BD4F001EB299 /* InputHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

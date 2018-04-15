@@ -8,20 +8,32 @@
 
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
-#import "Player.h"
+#import "PlayerManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         InputHandler *inputHandler = [[InputHandler alloc] init];
-        Player *firstPlayer = [[Player alloc] init];
+        PlayerManager *playerManager = [[PlayerManager alloc] init];
         
-        while ([firstPlayer gameOver]) {
+        while ([[playerManager players] count] == 0) {
+            NSLog(@"Enter the amount of players in this game:");
+            NSString *multiplayerString = [inputHandler parse];
+            NSInteger multiplayerNumber = [multiplayerString intValue];
+            if (multiplayerNumber) {
+                [playerManager createPlayers:multiplayerNumber];
+            }
+            else {
+                NSLog(@"Please input a valid numeric value");
+            }
+        }
+        NSLog(@"Type \"roll\" or \"r\"");
+        while ([[playerManager currentPlayer] gameOver]) {
             NSString *input = [inputHandler parse];
             if ([input isEqualToString:@"roll"] || [input isEqualToString:@"r"]) {
-                [firstPlayer roll];
+                [playerManager roll];
             }
-            if (![firstPlayer gameOver]) {
-                NSLog(@"Congratulations you've made it to 100!");
+            if (![[playerManager currentPlayer] gameOver]) {
+                NSLog(@"GAME OVER: %@ made it first to 100!", [[playerManager currentPlayer] name]);
                 break;
             }
         }
