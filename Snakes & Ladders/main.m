@@ -29,13 +29,28 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Type \"roll\" or \"r\"");
         while ([[playerManager currentPlayer] gameOver]) {
             NSString *input = [inputHandler parse];
+            
             if ([input isEqualToString:@"roll"] || [input isEqualToString:@"r"]) {
                 [playerManager roll];
                 NSLog(@"score: %@", [playerManager score]);
             }
+            
+            if ([input isEqualToString:@"quit"]) {
+                break;
+            }
+            
             if (![[playerManager currentPlayer] gameOver]) {
                 NSLog(@"GAME OVER: %@ made it first to 100!", [[playerManager currentPlayer] name]);
-                break;
+                
+                NSLog(@"\n\nWould you like to play again? (y/n)");
+                NSString *playAgain = [inputHandler parse];
+                if ([playAgain isEqualToString:@"y"]) {
+                    [[playerManager players] removeAllObjects];
+                    continue;
+                }
+                else {
+                    break;
+                }
             }
         }
     }

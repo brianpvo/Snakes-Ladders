@@ -42,8 +42,8 @@
     NSMutableArray *scoreArray = [[NSMutableArray alloc] init];
     for (Player *p in _players) {
         [scoreArray addObject:[p score]];
-        _finalScore = [scoreArray componentsJoinedByString:@", "];
     }
+    _finalScore = [scoreArray componentsJoinedByString:@", "];
     return _finalScore;
 }
 
