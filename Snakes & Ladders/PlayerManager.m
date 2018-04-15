@@ -30,11 +30,8 @@
 
 -(void)roll {
     [[self currentPlayer] roll];
-    if (_currentIndex < [_players count] - 1) {
-        _currentIndex++;
-    } else {
-        _currentIndex = 0;
-    }
+    _currentIndex++;
+    _currentIndex = _currentIndex % [_players count];
 }
 -(Player *)currentPlayer {
     return [_players objectAtIndex:_currentIndex];
