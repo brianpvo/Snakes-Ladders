@@ -17,5 +17,6 @@
 @property (nonatomic) NSString *name;
 
 -(void)roll;
+-(NSString *)score;
 
 @end

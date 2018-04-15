@@ -59,4 +59,8 @@
     NSLog(@"%@", _output);
 }
 
+-(NSString *)score {
+    return [NSString stringWithFormat:@"%@: %ld", _name, _currentSquare];
+}
+
 @end

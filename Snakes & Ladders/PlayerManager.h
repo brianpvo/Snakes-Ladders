@@ -13,9 +13,11 @@
 
 @property (nonatomic) NSMutableArray *players;
 @property (nonatomic) NSInteger currentIndex;
+@property (nonatomic) NSString *finalScore;
 
 -(void)createPlayers:(NSInteger) numberOfPlayers;
 -(void)roll;
 -(Player *)currentPlayer;
+-(NSString *)score;
 
 @end

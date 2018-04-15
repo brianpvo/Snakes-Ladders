@@ -31,6 +31,7 @@ int main(int argc, const char * argv[]) {
             NSString *input = [inputHandler parse];
             if ([input isEqualToString:@"roll"] || [input isEqualToString:@"r"]) {
                 [playerManager roll];
+                NSLog(@"score: %@", [playerManager score]);
             }
             if (![[playerManager currentPlayer] gameOver]) {
                 NSLog(@"GAME OVER: %@ made it first to 100!", [[playerManager currentPlayer] name]);
